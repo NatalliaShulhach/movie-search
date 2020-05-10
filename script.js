@@ -74,7 +74,7 @@ async function searchMovie(userRequest, isClearSearch) {
     if (isClearSearch) {
         renderСounter = 1;
     }
-    let url = `http://www.omdbapi.com/?s=${userRequest}&page=${renderСounter}&apikey=699bb316`;
+    let url = `https://www.omdbapi.com/?s=${userRequest}&page=${renderСounter}&apikey=699bb316`;
     let responseMovie = await fetch(url);
     let resultMovie = await responseMovie.json();
 
@@ -131,7 +131,7 @@ function drawCarousel(resultMovieSearch, isClearSearch, length = 10) {
 }
 
 async function setRatingMovie(el, ratingMovie) {
-    let movieRatingUrl = `http://www.omdbapi.com/?i=${ratingMovie}&plot=full&apikey=699bb316`;
+    let movieRatingUrl = `https://www.omdbapi.com/?i=${ratingMovie}&plot=full&apikey=699bb316`;
     let responseRatingMovie = await fetch(movieRatingUrl);
     let resultRatingMovie = await responseRatingMovie.json();
     if (resultRatingMovie.Response == "True") {
